@@ -8,6 +8,7 @@ import java.awt.geom.Rectangle2D;
 
 public class Rond extends Forme {
     Color color;
+
     public Rond(int height, int width) {
         super(height, width);
         color = Color.BLUE;
@@ -33,7 +34,8 @@ public class Rond extends Forme {
 
     @Override
     public Shape getShape() {
-        Shape tmp = new Arc2D.Double(50, 50, 300, 300, 90, 360, Arc2D.OPEN);
+        int tmp2 = getPosY();
+        Shape tmp = new Arc2D.Double(getPosX(), getPosY(), getSize(), getSize(), 0, 360, Arc2D.CHORD);
         return tmp;
     }
 }

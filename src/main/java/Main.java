@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        int nbFormes = 20;
+        int nbFormes = 1;
         ArrayList<Bouncable> formList = new ArrayList<>();
 
         Displayer tmp = Display.getInstance();

@@ -40,7 +40,7 @@ public abstract class Forme implements Bouncable{
         int tmp = Display.getInstance().getHeight();
         int tmp2 = getSize();
 
-        if(posY < 0){
+        if(posY < radius){
             posY = -posY + (int) Math.ceil(radius);
             speedY *= -1;
         }else if((posY + radius) > Display.getInstance().getHeight() && speedY > 0){

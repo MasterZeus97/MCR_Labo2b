@@ -1,6 +1,7 @@
 package Geom;
 
 import Display.Display;
+import Geom.Renderer.Renderer;
 
 import java.awt.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -10,13 +11,14 @@ public abstract class Forme implements Bouncable{
     protected double radius;
     protected int posX, posY;
     protected int speedX, speedY;
+    protected Renderer renderer;
 
-    public Forme(int height, int width) {
+    public Forme() {
         size = ThreadLocalRandom.current().nextInt(5, 20);
-        posX = ThreadLocalRandom.current().nextInt((int) Math.ceil(radius), height - (int) Math.ceil(radius));
-        posY = ThreadLocalRandom.current().nextInt((int) Math.ceil(radius), width - (int) Math.ceil(radius));
-        speedX = 0;//ThreadLocalRandom.current().nextInt(-5, 5);
-        speedY = 1;//ThreadLocalRandom.current().nextInt(-5, 5);
+        posX = ThreadLocalRandom.current().nextInt((int) Math.ceil(radius), Display.getInstance().getHeight() - (int) Math.ceil(radius));
+        posY = ThreadLocalRandom.current().nextInt((int) Math.ceil(radius), Display.getInstance().getWidth() - (int) Math.ceil(radius));
+        speedX = ThreadLocalRandom.current().nextInt(-5, 5);
+        speedY = ThreadLocalRandom.current().nextInt(-5, 5);
         radius = size/2.0;
     }
 

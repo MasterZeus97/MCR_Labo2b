@@ -1,26 +1,25 @@
 import Display.Displayer;
 import Display.Display;
 import Geom.Bouncable;
-import Geom.Carre;
-import Geom.Forme;
-import Geom.Rond;
+import Geom.Squares.Squares;
+import Geom.Circles.Circles;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-
-        int nbFormes = 1;
+/*
+        int nbFormes = 20;
         ArrayList<Bouncable> formList = new ArrayList<>();
 
         Displayer tmp = Display.getInstance();
 
         for(int i = 0; i < nbFormes; i++){
             if(i%2 == 0){
-                formList.add(new Rond(tmp.getHeight(), tmp.getWidth()));
+                formList.add(new Circles());
             }else{
-                formList.add(new Carre(tmp.getHeight(), tmp.getWidth()));
+                formList.add(new Squares());
             }
         }
 
@@ -33,7 +32,7 @@ public class Main {
                 x.move();
             }
             tmp.repaint();
-        }/*
+        }*//*
         Timer drawTimer = new Timer(10, e -> {
             for(Forme x : formList){
                 //x.draw(tmp.getGraphics());

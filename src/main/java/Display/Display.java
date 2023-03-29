@@ -2,6 +2,8 @@ package Display;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Display implements Displayer {
     private static Display instance;
@@ -93,4 +95,11 @@ public class Display implements Displayer {
     public void setTitle(String title) {
         frame.setTitle(title);
     }
+
+    @Override
+    public void addKeyListener(KeyAdapter ka) {
+        frame.addKeyListener(ka);
+    }
+
+
 }

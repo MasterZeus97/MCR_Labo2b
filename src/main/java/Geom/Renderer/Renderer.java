@@ -1,4 +1,4 @@
-package Display;
+package Geom.Renderer;
 
 import Geom.Bouncable;
 

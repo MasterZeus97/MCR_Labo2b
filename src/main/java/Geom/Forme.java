@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Forme implements Bouncable{
     protected int size;
-    protected double radius = size/2.0;
+    protected double radius;
     protected int posX, posY;
     protected int speedX, speedY;
 
@@ -17,6 +17,7 @@ public abstract class Forme implements Bouncable{
         posY = ThreadLocalRandom.current().nextInt((int) Math.ceil(radius), width - (int) Math.ceil(radius));
         speedX = 0;//ThreadLocalRandom.current().nextInt(-5, 5);
         speedY = 1;//ThreadLocalRandom.current().nextInt(-5, 5);
+        radius = size/2.0;
     }
 
     public abstract void draw();
@@ -40,8 +41,8 @@ public abstract class Forme implements Bouncable{
         if(posY < 0){
             posY = -posY + (int) Math.ceil(radius);
             speedY *= -1;
-        }else if((posY + size) > Display.getInstance().getHeight()){
-            posY = Display.getInstance().getHeight() - ((posY + getSize()) - Display.getInstance().getHeight());//2 * Display.getInstance().getHeight() - (posY + (int) Math.ceil(radius));
+        }else if((posY + radius) > Display.getInstance().getHeight() && speedY > 0){
+            posY = 2 * Display.getInstance().getHeight() - (posY + (int) Math.ceil(radius));//Display.getInstance().getHeight() - ((posY + getSize()) - Display.getInstance().getHeight());//2 * Display.getInstance().getHeight() - (posY + (int) Math.ceil(radius));
             speedY *= -1;
         }
     }

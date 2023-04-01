@@ -1,6 +1,5 @@
 package Geom.Squares;
 
-import Display.Display;
 import Geom.Renderer.HollowRender;
 
 import java.awt.*;

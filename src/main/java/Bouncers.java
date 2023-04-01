@@ -13,7 +13,7 @@ public class Bouncers {
     private LinkedList<Bouncable> bouncers;
     private FormeFactories filled;
     private FormeFactories hollow;
-    /* … */
+
     public Bouncers() {
         bouncers = new LinkedList<>();
         filled = new FilledFactory();
@@ -21,7 +21,6 @@ public class Bouncers {
         /* … */
     }
     public void run() {
-        /* … */
         Display.getInstance().setTitle("Labo2b");
         Display.getInstance().addKeyListener(new KeyAdapter() {
             @Override
@@ -52,7 +51,6 @@ public class Bouncers {
 
         Timer drawTimer = new Timer(10, e -> {
             for(Bouncable x : bouncers){
-                //x.draw(tmp.getGraphics());
                 x.draw();
                 x.move();
             }

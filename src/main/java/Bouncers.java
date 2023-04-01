@@ -1,25 +1,37 @@
 import Display.Display;
-import Geom.Bouncable;
-import Geom.Factories.FilledFactory;
-import Geom.Factories.FormeFactories;
-import Geom.Factories.HollowFactory;
+import Shapes.Bouncable;
+import Shapes.Factories.FilledFactory;
+import Shapes.Factories.ShapeFactories;
+import Shapes.Factories.HollowFactory;
 
 import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 
+/**
+ * Classe Bouncers, contenant le main du programme. La création des formes est effectué dans cette classe.
+ *
+ * @author Thibault Seem
+ * @date 01.04.23
+ */
 public class Bouncers {
     private LinkedList<Bouncable> bouncers;
-    private FormeFactories filled;
-    private FormeFactories hollow;
+    private ShapeFactories filled;
+    private ShapeFactories hollow;
 
+    /**
+     * Constructeur de la classe Bouncers
+     */
     public Bouncers() {
         bouncers = new LinkedList<>();
         filled = new FilledFactory();
         hollow = new HollowFactory();
-        /* … */
     }
+
+    /**
+     * Cette méthode permet de faire fonctionner l'affichage.
+     */
     public void run() {
         Display.getInstance().setTitle("Labo2b");
         Display.getInstance().addKeyListener(new KeyAdapter() {
@@ -30,12 +42,10 @@ public class Bouncers {
                     bouncers.clear();
                 }
                 if (e.getKeyChar() == 'b') {
-                    /*for(int i = 0; i < 10; ++i){
+                    for(int i = 0; i < 10; ++i){
                         bouncers.add(hollow.createCircle());
                         bouncers.add(hollow.createSquare());
-                    }*/
-
-                    bouncers.add(hollow.createCircle());
+                    }
                 }
                 if (e.getKeyChar() == 'f') {
                     for(int i = 0; i < 10; ++i){

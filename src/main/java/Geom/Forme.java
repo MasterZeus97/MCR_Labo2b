@@ -17,8 +17,8 @@ public abstract class Forme implements Bouncable{
         size = ThreadLocalRandom.current().nextInt(5, 20);
         posX = ThreadLocalRandom.current().nextInt((int) Math.ceil(radius), Display.getInstance().getHeight() - (int) Math.ceil(radius));
         posY = ThreadLocalRandom.current().nextInt((int) Math.ceil(radius), Display.getInstance().getWidth() - (int) Math.ceil(radius));
-        speedX = ThreadLocalRandom.current().nextInt(-5, 5);
-        speedY = ThreadLocalRandom.current().nextInt(-5, 5);
+        speedX = 0;//ThreadLocalRandom.current().nextInt(-5, 5);
+        speedY = 1;//ThreadLocalRandom.current().nextInt(-5, 5);
         radius = size/2.0;
     }
 
@@ -44,7 +44,11 @@ public abstract class Forme implements Bouncable{
             posY = -posY + (int) Math.ceil(radius);
             speedY *= -1;
         }else if((posY + radius) > Display.getInstance().getHeight() && speedY > 0){
-            posY = 2 * Display.getInstance().getHeight() - (posY + (int) Math.ceil(radius));//Display.getInstance().getHeight() - ((posY + getSize()) - Display.getInstance().getHeight());//2 * Display.getInstance().getHeight() - (posY + (int) Math.ceil(radius));
+            int tmp3 = 2 * Display.getInstance().getHeight();
+            int tmp4 = posY;
+            int tmp5 = (int) Math.ceil(radius);
+
+            posY = 2 * Display.getInstance().getHeight() - (posY + 2*(int) Math.ceil(radius));//Display.getInstance().getHeight() - ((posY + getSize()) - Display.getInstance().getHeight());//2 * Display.getInstance().getHeight() - (posY + (int) Math.ceil(radius));
             speedY *= -1;
         }
     }

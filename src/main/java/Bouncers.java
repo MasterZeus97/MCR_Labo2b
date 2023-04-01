@@ -31,10 +31,12 @@ public class Bouncers {
                     bouncers.clear();
                 }
                 if (e.getKeyChar() == 'b') {
-                    for(int i = 0; i < 10; ++i){
+                    /*for(int i = 0; i < 10; ++i){
                         bouncers.add(hollow.createCircle());
                         bouncers.add(hollow.createSquare());
-                    }
+                    }*/
+
+                    bouncers.add(hollow.createCircle());
                 }
                 if (e.getKeyChar() == 'f') {
                     for(int i = 0; i < 10; ++i){

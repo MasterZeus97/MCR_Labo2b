@@ -17,6 +17,7 @@ public interface Displayer {
      */
     int getWidth();
 
+    
     /**
      * Méthode pour obtenir la hauteur de l'affichage
      * @return La hauteur de l'affichage

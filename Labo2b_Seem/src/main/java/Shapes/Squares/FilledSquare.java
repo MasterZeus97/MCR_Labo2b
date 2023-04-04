@@ -1,4 +1,4 @@
-package Shapes.Circles;
+package Shapes.Squares;
 
 import Display.Display;
 import Shapes.Renderer.FilledRenderer;
@@ -6,19 +6,19 @@ import Shapes.Renderer.FilledRenderer;
 import java.awt.*;
 
 /**
- * Classe FilledCircle, héritant de la classe abstraite Circles, définissant la couleur du cercle et implémentant
+ * Classe FilledSquare, héritant de la classe abstraite Squares, définissant la couleur du carré et implémentant
  * la méthode draw pour dessiner la shape sur un graphics2D.
  *
  * @author MCR
  * @date 01.04.23
  */
-public class FilledCircle extends Circles {
+public class FilledSquare extends Squares {
 
     /**
-     * Constructeur de FilledCircle indiquant la couleur de la forme
+     * Constructeur de FilledSquare indiquant la couleur de la forme
      */
-    public FilledCircle() {
-        super(Color.BLUE);
+    public FilledSquare() {
+        super(Color.YELLOW);
     }
 
     /**

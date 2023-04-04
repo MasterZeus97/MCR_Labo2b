@@ -26,8 +26,8 @@ public abstract class AbstractShapes implements Bouncable{
      */
     public AbstractShapes(Color color) {
         size = ThreadLocalRandom.current().nextInt(5, 20);
-        posX = ThreadLocalRandom.current().nextInt(0, Display.getInstance().getHeight() - size);
-        posY = ThreadLocalRandom.current().nextInt(0, Display.getInstance().getWidth() - size);
+        posX = ThreadLocalRandom.current().nextInt(0, Display.getInstance().getWidth() - size);
+        posY = ThreadLocalRandom.current().nextInt(0, Display.getInstance().getHeight() - size);
         speedX = ThreadLocalRandom.current().nextInt(-5, 5);
         speedY = ThreadLocalRandom.current().nextInt(-5, 5);
         this.color = color;

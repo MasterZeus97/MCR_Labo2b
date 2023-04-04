@@ -34,8 +34,8 @@ public class Display implements Displayer {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        imageTemp = jPanel.createImage(jPanel.getWidth(), jPanel.getHeight());
-        image = jPanel.createImage(jPanel.getWidth(), jPanel.getHeight());
+        imageTemp = jPanel.createImage(getWidth(), getHeight());
+        image = jPanel.createImage(getWidth(), getHeight());
     }
 
     /**
@@ -81,7 +81,7 @@ public class Display implements Displayer {
     @Override
     public void repaint() {
         image = imageTemp;
-        imageTemp = jPanel.createImage(jPanel.getWidth(), jPanel.getHeight());
+        imageTemp = jPanel.createImage(getWidth(), getHeight());
         jPanel.repaint();
     }
 
